@@ -6,14 +6,6 @@ authors:
     - charles-l
 
 description: |
-    gl bindings for crystal
-
-#dependencies:
-#    sdl2:
-#        github: charles-l/crystal-sdl2
-#
-# development_dependencies:
-#   webmock:
-#     github: manastech/webmock
+    OpenGL bindings for crystal
 
 license: MIT
