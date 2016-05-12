@@ -16,7 +16,7 @@ class GlfwApp
 
     @window = GLFW.create_window @width, @height, "Crystal OpenGL", nil, nil
 
-    raise "Failed to open GLFW window" if @window.nil?
+    raise "Failed to open GLFW window" if @window.null?
 
     GLFW.set_current_context @window
 
@@ -68,9 +68,5 @@ class GlfwApp
     cleanup
     GLFW.terminate
   end
-
-  abstract def process_inputs
-  abstract def render_frame
-  abstract def cleanup
 end
 

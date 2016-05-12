@@ -78,18 +78,18 @@ module GL
 
   class Shader
     def self.vertex(source = nil)
-      shader = new LibGL::VERTEX_SHADER
+      shader = Shader.new LibGL::VERTEX_SHADER
       shader.with_source(source) if source
       shader
     end
 
     def self.fragment(source = nil)
-      shader = new LibGL::FRAGMENT_SHADER
+      shader = Shader.new LibGL::FRAGMENT_SHADER
       shader.with_source(source) if source
       shader
     end
 
-    def initialize(type)
+    def initialize(type : UInt32)
       @type = type
       @shader_id = LibGL.create_shader(@type)
     end

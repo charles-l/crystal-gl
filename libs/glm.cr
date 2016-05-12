@@ -23,7 +23,7 @@ module GLM
   end
 
   struct TVec3(T)
-    @buffer :: T*
+    @buffer : T*
 
     def self.zero
       new T.zero, T.zero, T.zero
@@ -106,7 +106,7 @@ module GLM
   end
 
   struct TMat4(T)
-    @buffer :: T*
+    @buffer : T*
 
     def self.zero
       TMat4(T).new { T.zero }

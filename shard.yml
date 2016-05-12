@@ -1,0 +1,19 @@
+name: gl
+version: 0.1.0
+
+authors:
+    - ggiraldez
+    - charles-l
+
+description: |
+    gl bindings for crystal
+
+#dependencies:
+#    sdl2:
+#        github: charles-l/crystal-sdl2
+#
+# development_dependencies:
+#   webmock:
+#     github: manastech/webmock
+
+license: MIT

@@ -1,0 +1,6 @@
+version: 1.0
+shards:
+  sdl2:
+    github: charles-l/crystal-sdl2
+    commit: 5ce47e4fb4a1bd7fa6aa511dac9d7d39dbd73926
+

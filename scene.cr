@@ -19,16 +19,16 @@ class Scene
     LibGL.gen_buffers 1, out @vertex_buffer
     LibGL.gen_buffers 1, out @uv_buffer
 
-    @program = load_shaders
+    @program = load_shaders as GL::ShaderProgram
     @model = Cube.new
 
-    @texture = load_texture
+    @texture = load_texture as UInt32
 
     @position = GLM.vec3(0,0,5)
     @horizontal_angle = 3.14_f32
     @vertical_angle = 0_f32
     @fov = 45_f32
-    @scene_ratio = 4.0/3.0
+    @scene_ratio = 0.0; @scene_ratio = 4.0/3.0
   end
 
   def direction
@@ -128,10 +128,11 @@ class Scene
     LibGL.generate_mipmap LibGL::TEXTURE_2D
     SOIL.free_image_data image_data
 
-    SOIL.load_texture("textures/crystal.png",
-                      SOIL::LOAD_AUTO,
-                      SOIL::CREATE_NEW_ID,
-                      0_u32)
+    # uh... this crashes it i guess?
+    #SOIL.load_texture("textures/crystal.png",
+    #                  SOIL::LOAD_AUTO,
+    #                  SOIL::CREATE_NEW_ID,
+    #                  SOIL::FLAG_NTSC_SAFE_RGB)
 
     puts "Loaded texture #{tex_id}"
 
