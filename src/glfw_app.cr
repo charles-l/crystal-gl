@@ -78,7 +78,6 @@ class GLFWApp
   end
 
   def finalize
-    cleanup
     GLFW.terminate
   end
 end
