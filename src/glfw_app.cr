@@ -2,7 +2,7 @@ require "./glfw"
 require "./glew"
 require "./gl"
 
-class GlfwApp
+class GLFWApp
   def initialize(@width = 1024, @height = 768)
     unless GLFW.init
       raise "Failed to initialize GLFW"
@@ -38,9 +38,9 @@ class GlfwApp
     start = last_time = GLFW.get_time
 
     while true
-      GLFW.poll_events
+      GLFW.poll_events # TODO: make this accessable via api
       if GLFW.get_key(@window, GLFW::KEY_ESCAPE) == GLFW::PRESS &&
-         GLFW.window_should_close(@window)
+          GLFW.window_should_close(@window)
         break
       end
 
@@ -60,11 +60,9 @@ class GlfwApp
     delta_t = GLFW.get_time - start
     puts "#{frames} in #{delta_t} secs"
     puts "FPS: #{frames / delta_t}"
-
-    terminate
   end
 
-  def terminate
+  def finalize
     cleanup
     GLFW.terminate
   end

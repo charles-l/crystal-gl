@@ -163,3 +163,5 @@ module GL
   end
 end
 
+# expose GLFWApp class to external world
+require "./glfw_app.cr"
