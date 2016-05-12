@@ -1,5 +1,5 @@
 require "spec"
-require "glm"
+require "../src/glm"
 
 describe "GLM" do
   describe "Vec3" do

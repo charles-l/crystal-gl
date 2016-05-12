@@ -1,4 +1,4 @@
-require "./glfw_app"
+require "../src/glfw_app"
 require "./scene"
 
 class TestApp < GlfwApp

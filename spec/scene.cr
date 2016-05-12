@@ -1,7 +1,7 @@
-require "gl"
-require "glm"
+require "../src/gl"
+require "../src/glm"
 require "./utils"
-require "soil"
+require "../src/soil"
 
 require "./models/cube"
 

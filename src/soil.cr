@@ -1,4 +1,4 @@
-require "lib_gl"
+require "./lib_gl"
 
 @[Link("SOIL")]
 @[Link(framework: "CoreFoundation")] ifdef darwin

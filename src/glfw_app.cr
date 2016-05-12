@@ -1,6 +1,6 @@
-require "glfw"
-require "glew"
-require "gl"
+require "./glfw"
+require "./glew"
+require "./gl"
 
 class GlfwApp
   def initialize(@width = 1024, @height = 768)

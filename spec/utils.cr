@@ -1,4 +1,4 @@
-require "gl"
+require "../src/gl"
 
 def check_error(where="")
   if error = GL.last_error
