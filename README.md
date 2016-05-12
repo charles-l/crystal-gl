@@ -11,3 +11,7 @@ With all dependencies installed, run:
 ```bash
 cd spec && crystal test_glfw.cr
 ```
+
+## TODO
+* cleanup
+    * specifically fix the GLFWApp class which is all over the place right now
