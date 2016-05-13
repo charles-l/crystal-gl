@@ -238,6 +238,7 @@ lib LibGL
   fun viewport = glViewport(x : Uint, y : Uint, width : Sizei, height : Sizei) : Void
   fun load_identity = glLoadIdentity : Void
   fun translate = glTranslated(x : Float64, y : Float64, z : Float64) : Void
+  fun rotate = glRotated(angle : Float64, x : Float64, y : Float64, z : Float64) : Void
 
   # TODO: port rest of transformation functions
 
