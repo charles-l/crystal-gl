@@ -244,4 +244,11 @@ lib LibGL
 
   # Misc
   fun polygon_mode = glPolygonMode(face : Enum, mode : Enum) : Void
+
+  # Drawing functions
+  fun begin = glBegin(mode : Enum) : Void
+  fun end = glEnd : Void
+  fun flush = glFlush : Void
+  fun vertex3 = glVertex3d(x : Float64, y : Float64, z : Float64) : Void
+  fun color3 = glColor3d(red : Float64, green : Float64, blue : Float64) : Void
 end
