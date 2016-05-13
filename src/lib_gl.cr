@@ -1,4 +1,5 @@
 @[Link(framework: "OpenGL")] ifdef darwin
+# TODO: port GLU
 lib LibGL
   alias Enum = UInt32     # unsigned int
   alias Boolean = UInt8   # unsigned char
@@ -65,6 +66,33 @@ lib LibGL
   GL_COLOR_MATERIAL_FACE = 0x0B55_u32
   GL_COLOR_MATERIAL_PARAMETER = 0x0B56_u32
   GL_NORMALIZE = 0x0BA1_u32
+
+  # Matrix Mode
+  GL_MATRIX_MODE = 0x0BA0_u32
+  GL_MODELVIEW = 0x1700_u32
+  GL_PROJECTION = 0x1701_u32
+  GL_TEXTURE = 0x1702_u32
+
+  # Polygons
+  GL_POINT = 0x1B00_u32
+  GL_LINE = 0x1B01_u32
+  GL_FILL = 0x1B02_u32
+  GL_CW = 0x0900_u32
+  GL_CCW = 0x0901_u32
+  GL_FRONT = 0x0404_u32
+  GL_BACK = 0x0405_u32
+  GL_POLYGON_MODE = 0x0B40_u32
+  GL_POLYGON_SMOOTH = 0x0B41_u32
+  GL_POLYGON_STIPPLE = 0x0B42_u32
+  GL_EDGE_FLAG = 0x0B43_u32
+  GL_CULL_FACE = 0x0B44_u32
+  GL_CULL_FACE_MODE = 0x0B45_u32
+  GL_FRONT_FACE = 0x0B46_u32
+  GL_POLYGON_OFFSET_FACTOR = 0x8038_u32
+  GL_POLYGON_OFFSET_UNITS = 0x2A00_u32
+  GL_POLYGON_OFFSET_POINT = 0x2A01_u32
+  GL_POLYGON_OFFSET_LINE = 0x2A02_u32
+  GL_POLYGON_OFFSET_FILL = 0x8037_u32
 
   # AttribMask
   DEPTH_BUFFER_BIT   = 0x00000100_u32
@@ -200,5 +228,19 @@ lib LibGL
 
   fun get_uniform_location = glGetUniformLocation(program : Uint, name : Char*) : Int
   fun uniform_matrix_4fv = glUniformMatrix4fv(location : Int, count : Sizei, transpose : Boolean, value : Float*) : Void
-end
 
+  # Lighting
+  fun shade_model = glShadeModel(mode : Enum) : Void
+  # TODO: port rest of lighting functions
+
+  # Transformation
+  fun matrix_mode = glMatrixMode(mode : Enum) : Void
+  fun viewport = glViewport(x : Uint, y : Uint, width : Sizei, height : Sizei) : Void
+  fun load_identity = glLoadIdentity : Void
+  fun translate = glTranslated(x : Float64, y : Float64, z : Float64) : Void
+
+  # TODO: port rest of transformation functions
+
+  # Misc
+  fun polygon_mode = glPolygonMode(face : Enum, mode : Enum) : Void
+end
