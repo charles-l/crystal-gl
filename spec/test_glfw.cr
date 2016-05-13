@@ -1,7 +1,7 @@
 require "../src/glfw_app"
 require "./scene"
 
-class TestApp < GlfwApp
+class TestApp < GLFWApp
   def initialize
     super
 
