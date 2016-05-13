@@ -30,6 +30,42 @@ lib LibGL
   FLOAT           = 0x1406_u32
   DOUBLE          = 0x140A_u32
 
+  # Lighting
+  GL_LIGHTING = 0x0B50_u32
+  GL_LIGHT0 = 0x4000_u32
+  GL_LIGHT1 = 0x4001_u32
+  GL_LIGHT2 = 0x4002_u32
+  GL_LIGHT3 = 0x4003_u32
+  GL_LIGHT4 = 0x4004_u32
+  GL_LIGHT5 = 0x4005_u32
+  GL_LIGHT6 = 0x4006_u32
+  GL_LIGHT7 = 0x4007_u32
+  GL_SPOT_EXPONENT = 0x1205_u32
+  GL_SPOT_CUTOFF = 0x1206_u32
+  GL_CONSTANT_ATTENUATION = 0x1207_u32
+  GL_LINEAR_ATTENUATION = 0x1208_u32
+  GL_QUADRATIC_ATTENUATION = 0x1209_u32
+  GL_AMBIENT = 0x1200_u32
+  GL_DIFFUSE = 0x1201_u32
+  GL_SPECULAR = 0x1202_u32
+  GL_SHININESS = 0x1601_u32
+  GL_EMISSION = 0x1600_u32
+  GL_POSITION = 0x1203_u32
+  GL_SPOT_DIRECTION = 0x1204_u32
+  GL_AMBIENT_AND_DIFFUSE = 0x1602_u32
+  GL_COLOR_INDEXES = 0x1603_u32
+  GL_LIGHT_MODEL_TWO_SIDE = 0x0B52_u32
+  GL_LIGHT_MODEL_LOCAL_VIEWER = 0x0B51_u32
+  GL_LIGHT_MODEL_AMBIENT = 0x0B53_u32
+  GL_FRONT_AND_BACK = 0x0408_u32
+  GL_SHADE_MODEL = 0x0B54_u32
+  GL_FLAT = 0x1D00_u32
+  GL_SMOOTH = 0x1D01_u32
+  GL_COLOR_MATERIAL = 0x0B57_u32
+  GL_COLOR_MATERIAL_FACE = 0x0B55_u32
+  GL_COLOR_MATERIAL_PARAMETER = 0x0B56_u32
+  GL_NORMALIZE = 0x0BA1_u32
+
   # AttribMask
   DEPTH_BUFFER_BIT   = 0x00000100_u32
   STENCIL_BUFFER_BIT = 0x00000400_u32
@@ -114,8 +150,8 @@ lib LibGL
   fun get_error = glGetError() : Enum
 
   fun get_string = glGetString(name : Enum) : Ubyte*
-  fun get_stringi = glGetStringi(name : Enum, index : Uint) : Ubyte*
-  fun get_integerv = glGetIntegerv(pname : Enum, params : Uint*) : Void
+    fun get_stringi = glGetStringi(name : Enum, index : Uint) : Ubyte*
+    fun get_integerv = glGetIntegerv(pname : Enum, params : Uint*) : Void
 
   # State functions
   fun clear_color = glClearColor(red : Float, green : Float, blue : Float, alpha : Float) : Void
