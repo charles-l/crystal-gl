@@ -122,6 +122,10 @@ module GL
     def delete
       LibGL.delete_shader @shader_id
     end
+
+    def finalize
+      self.delete
+    end
   end
 
   class ShaderProgram
