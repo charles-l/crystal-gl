@@ -153,7 +153,7 @@ module GL
     end
 
     def use
-      LibGL.use_program @program_id
+      gl_checked LibGL.use_program @program_id
       self
     end
 
