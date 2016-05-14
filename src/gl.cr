@@ -125,13 +125,14 @@ module GL
   end
 
   class ShaderProgram
-    def initialize
+    def initialize(*progs)
       @program_id = LibGL.create_program
+      progs.each do |p|
+        self.attach p
+      end
     end
 
-    def program_id
-      @program_id
-    end
+    getter program_id
 
     def attach(shader)
       LibGL.attach_shader @program_id, shader.shader_id
