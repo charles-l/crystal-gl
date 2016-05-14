@@ -12,6 +12,7 @@ lib LibGL
   alias Ushort = UInt16   # unsigned short
   alias Uint = UInt32     # unsigned int
   alias Float = Float32   # float
+  alias Double = Float64  # double
   alias Clampf = Float32  # float
 
   alias Char = UInt8      # char
