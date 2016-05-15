@@ -3,7 +3,8 @@ require "./glu"
 
 macro gl_checked(call)
   value = {{call}}
-  raise "OpenGL call failed: " + {{call.stringify}} if LibGL.get_error != LibGL::NO_ERROR
+  e = LibGL.get_error
+  raise "OpenGL call failed (#{e}): " + {{call.stringify}} if e != LibGL::NO_ERROR
   value
 end
 
